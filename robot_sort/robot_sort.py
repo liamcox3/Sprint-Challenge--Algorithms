@@ -76,35 +76,68 @@ class SortingRobot:
         else:
             return 0
 
-    def set_light_on(self):
-        """
-        Turn on the robot's light
-        """
-        self._light = "ON"
-    def set_light_off(self):
-        """
-        Turn off the robot's light
-        """
-        self._light = "OFF"
-    def light_is_on(self):
-        """
-        Returns True if the robot's light is on and False otherwise.
-        """
-        return self._light == "ON"
+    # def set_light_on(self):
+    #     """
+    #     Turn on the robot's light
+    #     """
+    #     self._light = "ON"
+
+    # def set_light_off(self):
+    #     """
+    #     Turn off the robot's light
+    #     """
+    #     self._light = "OFF"
+
+    # def light_is_on(self):
+    #     """
+    #     Returns True if the robot's light is on and False otherwise.
+    #     """
+    #     return self._light == "ON"
 
     def sort(self):
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+                ##RECURSIVE IDEA##
+        #This is feeling like recursive because I have to use these methods
+
+        # Base case would be if can move right == false return the list
+        if self.can_move_right() == false:
+            return list
+        ## Need the robot to start from the begining so if can move left == false move right
+        if self.can_move_left() == false:
+                return self.move_right()
+            
+
+        # Robot picks up the item and needs to compare it to the rest looking for the smallest number
+
+        #Once robot finds smallest number, it needs to swap it at index 0
+
+        #robot goes to next index picks up the item and compares it to the next smallest. Swaps with index 1
+
+
+
+
+# for i in range(0, len(self._list) - 1):
+#             cur_index = i
+#             smallest_index = cur_index
+#         # TO-DO: find next smallest element
+#             for j in range(cur_index, len(self._list)):
+#                 if self._list[j] < self._list[smallest_index]:
+#                     smallest_index = j
+#             self._list[smallest_index], self._list[cur_index] = self._list[cur_index], self._list[smallest_index]
+
+#         return self._list
+
+
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1,
+         45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
 
     robot = SortingRobot(l)
 
